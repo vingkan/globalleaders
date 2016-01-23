@@ -383,6 +383,10 @@ header{
 		display: inline-block;
 	}
 
+	div.show-menu{
+		display: none;
+	}
+
 	nav{
 
 		right: 0;
@@ -404,10 +408,6 @@ header{
 			background-color: linear-gradient(to left, transparent 50%, @GlobalOrange 50%);
 			background-size: 200% 100%;
 			background-position: right bottom;
-
-			&:nth-child(1){
-				border: none;
-			}
 
 			&:hover{
 				background-position: left bottom;
@@ -441,17 +441,23 @@ header{
 
 			div.show-menu{
 				
+				display: block;
 				position: absolute;
-				//right: 0;
 				background: @mainLight;
 				width: 10vw;
 				height: 1.75 * @headerHeight;
 				line-height: 1.75 * @headerHeight;
 				text-align: center;
 
+				&:hover{
+					background: @Charcoal;
+				}
+
 				&:hover + nav{
 					top: 0;
 				}
+
+				.AnimateAll();
 
 			}
 
@@ -477,10 +483,6 @@ header{
 
 					i{
 						padding-right: 1 * @vh;
-					}
-
-					&:nth-child(1){
-						border-left: (0.5 * @vh) solid white;
 					}
 
 					&:hover{
