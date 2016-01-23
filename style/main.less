@@ -398,13 +398,17 @@ header{
 			font-size: 0.35 * @headerHeight;
 			line-height: @headerHeight;
 			height: @headerHeight;
+			//SLIDING BACKGROUND
+			background-color: linear-gradient(to left, transparent 50%, @GlobalOrange 50%);
+			background-size: 200% 100%;
+			background-position: right bottom;
 
 			&:nth-child(1){
 				border: none;
 			}
 
 			&:hover{
-				background: @GlobalOrange;
+				background-position: left bottom;
 			}
 
 			.AnimateAll();
