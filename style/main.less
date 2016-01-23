@@ -8,6 +8,12 @@
 
 @charcoal: #1a1a1a;
 
+@Emerald: #7f8c8d;
+@PeterRiver: #3498db;
+@Amethyst: #9b59b6;
+@Silver: #bdc3c7;
+@Asbestos: #7f8c8d;
+
 /*--------------------------------------------*/
 /*---> FONTS <--------------------------------*/
 /*--------------------------------------------*/
@@ -117,15 +123,15 @@ body{
 @paddingSize: 2 * @vh;
 
 section.section-page{
-	.SectionPage(blue);
+	.SectionPage(blue, @charcoal, @mainColor);
 }
 
-.SectionPage(@borderColor: @mainColor){
+.SectionPage(@backgroundColor: @charcoal, @textColor: white, @borderColor: @mainColor){
 
 	@borderHeight: 2.5 * @vh;
 
-	background: @charcoal;
-	color: white;
+	background: @backgroundColor;
+	color: @textColor;
 	border-bottom: @borderHeight solid @borderColor;
 	padding: @paddingSize 0;
 	margin: 0;
@@ -165,7 +171,39 @@ section.section-page{
 /*---> HEADER & FOOTER <----------------------*/
 /*--------------------------------------------*/
 
+header{
 
+	@headerHeight: 2.0 * @textSize;
+
+	& + div.header-space{
+		width: 100%;
+		height: @headerHeight;
+	}
+
+	position: fixed;
+	width: 100%;
+	height: @headerHeight;
+	background: @mainColor;
+	color: white;
+
+	nav{
+
+		background: red;
+		width: auto;
+		
+		a{
+			background: blue;
+			border-left: 2px solid white;
+			padding: 0.5 * @paddingSize;
+			//TEXT STYLES
+			text-align: center;
+			font-size: 0.35 * @headerHeight;
+			line-height: @headerHeight;
+		}
+
+	}
+
+}
 
 /*--------------------------------------------*/
 /*---> FORM <----------------------------------*/
