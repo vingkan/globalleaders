@@ -101,6 +101,13 @@
 
 		<script type="text/javascript">
 
+			$('a').click(function(){
+				$('html, body').animate({
+					scrollTop: $( $.attr(this, 'href') ).offset().top
+				}, 500);
+				return false;
+			});
+
 			var TEAMS = [{
 				name: 'Bully Busters',
 				img: 'style/img/bully-busters.jpg'
