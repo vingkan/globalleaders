@@ -155,7 +155,7 @@ body{
 @paddingSize: 2 * @vh;
 
 section.section-page{
-	.SectionPage(white, white, @mainColor);
+	.SectionPage(white, @Charcoal, @mainColor);
 }
 
 section#landing{
@@ -163,13 +163,15 @@ section#landing{
 	.SectionPage(url('img/new-year.png'), @Charcoal, @mainColor);
 
 	img{
-		width: 50%;
-		margin: (2 * @vh) 25%;
+		height: 30vh;
+		margin: (2 * @vh) auto;
 	}
 
 	h1{
 		color: @PeterRiver;
 		text-transform: uppercase;
+		font-size: 2.5 * @textSize;
+		line-height: 2.75 * @textSize;
 		//.EmphasizeText(@PeterRiver);
 	}
 
@@ -207,7 +209,7 @@ section#teams{
 		width: @arrowWidth;
 		margin: (-1 * @paddingSize) auto;
 		background: @arrowColor;
-		color: @textColor;
+		color: white;
 		//TEXT STYLES
 		text-align: center;
 		font-size: 0.75 * @arrowBoxHeight;
