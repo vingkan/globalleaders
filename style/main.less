@@ -439,29 +439,52 @@ header{
 				height: auto;
 			}
 
+			div.show-menu{
+				
+				position: absolute;
+				//right: 0;
+				background: @mainLight;
+				width: 10vw;
+				height: 1.75 * @headerHeight;
+				line-height: 1.75 * @headerHeight;
+				text-align: center;
+
+				&:hover + nav{
+					top: 0;
+				}
+
+			}
+
 			nav{
 
 				width: 10vw;
 				top: -14 * (@paddingSize + @headerHeight);
-				
-				&::after{
-					content: '-';
-					color: transparent;
-					background: @Charcoal;
-					padding: @paddingSize;
-					height: @headerHeight;
-				}
+				position: relative;
+				z-index: 65;
 
 				a{
 					
 					width: 100vw;
-					margin-left: -90vw;
 					float: left;
 					clear: left;
-					background: @Charcoal;
+					border-left: (0.5 * @vh) solid white;
+					background-color: @Charcoal;
+					background-color: linear-gradient(to left, transparent 50%, @GlobalOrange 50%);
+					background-size: 200% 100%;
+					background-position: right bottom;
+					font-size: 0.5 * @headerHeight;
+					z-index: 70;
+
+					i{
+						padding-right: 1 * @vh;
+					}
 
 					&:nth-child(1){
 						border-left: (0.5 * @vh) solid white;
+					}
+
+					&:hover{
+						background-position: left bottom;
 					}
 				
 				}
