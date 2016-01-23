@@ -220,6 +220,10 @@ section#involved{
 
 }
 
+section#timeline{
+	.SectionPage(url('img/grey-wash.png'), white, @mainColor);
+}
+
 section#signin{
 
 	button{
@@ -672,4 +676,25 @@ div#loading-screen{
 
 	.AnimateAll();
 
+}
+
+.SpinningBall(){
+
+	@-webkit-keyframes spinBall{
+		from{
+			transform: rotate(0deg);
+		}
+		to{
+			transform: rotate(360deg);
+		}
+	}
+
+	animation: spinBall 1s linear infinite;
+
+}
+
+img.spinning-ball{
+	width: 10vw;
+	margin: @vh 44vw;
+	.SpinningBall();
 }
