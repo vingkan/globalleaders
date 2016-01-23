@@ -2,7 +2,7 @@
 /*---> COLORS <-------------------------------*/
 /*--------------------------------------------*/
 
-@mainColor: #2d0a58;
+@mainColor: #F6931E;
 @mainLight: @mainColor + #222222;
 @mainDark: @mainColor - #222222;
 
@@ -12,6 +12,7 @@
 /*---> FONTS <--------------------------------*/
 /*--------------------------------------------*/
 
+@vh: 1vh;
 @textSize: 3vh;
 
 .HeadFont(){
@@ -46,7 +47,7 @@ h2{
 	line-height: 1.5 * @textSize;
 }
 
-h2{
+h3{
 	font-size: 1.1 * @textSize;
 	line-height: 1.35 * @textSize;
 }
@@ -74,6 +75,9 @@ li{
 /*--------------------------------------------*/
 
 html{
+	width: 100%;
+	padding: 0;
+	margin: 0;
 	background: white;
 	//Default Text Styles
 	.BodyFont();
@@ -83,7 +87,8 @@ html{
 
 body{
 	margin: 0;
-	width: 98vw;
+	width: 100%;
+	padding: 0;
 	margin: 0 auto;
 }
 
@@ -93,9 +98,67 @@ body{
 }
 
 /*--------------------------------------------*/
+/*---> DESIGN <-------------------------------*/
+/*--------------------------------------------*/
+
+.ArrowDown(@triColor: @mainColor, @triWidth: 10 * @vh , @triHeight: 2.5 * @vh){
+	width: 0;
+	height: 0;
+	border-left: (@triWidth / 2) solid transparent;
+	border-right: (@triWidth / 2) solid transparent;
+	border-top: @triHeight solid @triColor;
+}
+
+
+/*--------------------------------------------*/
 /*---> STRUCTURE <----------------------------*/
 /*--------------------------------------------*/
 
+@paddingSize: 2 * @vh;
+
+section.section-page{
+	.SectionPage(blue);
+}
+
+.SectionPage(@borderColor: @mainColor){
+
+	@borderHeight: 2.5 * @vh;
+
+	background: @charcoal;
+	color: white;
+	border-bottom: @borderHeight solid @borderColor;
+	padding: @paddingSize 0;
+	margin: 0;
+
+	h2.arrow-title{
+
+		@arrowWidth: 40vw;
+		@arrowHeight: @borderHeight;
+		@arrowBoxHeight: 1.5 * @textSize;
+		@arrowColor: @borderColor;
+
+		width: @arrowWidth;
+		margin: (-1 * @paddingSize) auto;
+		background: @arrowColor;
+		//TEXT STYLES
+		text-align: center;
+		font-size: 0.75 * @arrowBoxHeight;
+		line-height: @arrowBoxHeight;
+		height: @arrowBoxHeight;
+
+		& + div.arrow-down{
+			.ArrowDown(@arrowColor, @arrowWidth, @arrowHeight);
+			margin: @paddingSize auto;
+		}
+
+	}
+
+}
+
+/*div.arrow-down{
+	.ArrowDown(@mainColor, 20vw);
+	margin: 0 auto;
+}*/
 
 
 /*--------------------------------------------*/
