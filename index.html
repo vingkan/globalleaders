@@ -19,26 +19,64 @@
 	<body>
 
 		<header>
-			<img src="style/img/logo-short-white.png">
+			<a href="#top">
+				<img src="style/img/logo-short.png">
+			</a>
 			<nav>
-				<a>The Teams</a>
-				<a>What's New</a>
-				<a>Get Involved</a>
-				<a>Timeline</a>
-				<a>Sign In</a>
+				<a href="#teams">The Teams</a>
+				<a href="#new">What's New</a>
+				<a href="#involved">Get Involved</a>
+				<a href="#timeline">Timeline</a>
+				<a href="#signin">Sign In</a>
 			</nav>
 		</header>
 
-		<div class="header-space"></div>
+		<div class="header-space" id="top"></div>
+
+		<div id="loading-screen" class="loading">
+			<div id="loading-logo"></div>
+			<img src="style/img/hollow-logo-square.png">
+			<p>Even innovation takes time...</p>
+		</div>
 
 		<section class="section-page" id="landing">
+			<img src="style/img/logo-tall.png">
 			<h1 class="contrast">Community Innovation Projects</h1>
 			<p>We believe that the best way to develop leadership is through hands on and collaborative problem solving.</p>
-			<button class="page-button">Get Involved</button>
+			<a href="#involved">
+				<button class="page-button">Get Involved</button>
+			</a>
 		</section>
 
 		<section class="section-page" id="teams">
 			<h2 class="arrow-title">The Teams</h2>
+			<div class="arrow-down"></div>
+			<div id="team-boxes"></div>
+		</section>
+
+		<section class="section-page" id="new">
+			<h2 class="arrow-title">What's New</h2>
+			<div class="arrow-down"></div>
+			<h1>Section</h1>
+			<p>Section Text.</p>
+		</section>
+
+		<section class="section-page" id="involved">
+			<h2 class="arrow-title">Get Involved</h2>
+			<div class="arrow-down"></div>
+			<h1>Section</h1>
+			<p>Section Text.</p>
+		</section>
+
+		<section class="section-page" id="timeline">
+			<h2 class="arrow-title">Timeline</h2>
+			<div class="arrow-down"></div>
+			<h1>Section</h1>
+			<p>Section Text.</p>
+		</section>
+
+		<section class="section-page" id="signin">
+			<h2 class="arrow-title">Sign In</h2>
 			<div class="arrow-down"></div>
 			<h1>Section</h1>
 			<p>Section Text.</p>
@@ -46,7 +84,38 @@
 
 		<script type="text/javascript">
 
-			
+			var TEAMS = [{
+				name: 'Bully Busters',
+				img: 'style/img/bully-busters.jpg'
+			},{
+				name: 'Ed-Assist',
+				img: 'style/img/ed-assist.jpg'
+			},{
+				name: 'G-Squad',
+				img: 'style/img/g-squad.jpg'
+			},{
+				name: 'Super Sustainers',
+				img: 'style/img/super-sustainers.jpg'
+			}];
+
+			function getTeamBox(data){
+				var html = '';
+				html += '<div class="team-box" style="background-image: url(' + data.img + ');">';
+					html += '<h3>' + data.name + '</h3>';
+				html += '</div>';
+				return html;
+			}
+
+			var teamsDiv = document.getElementById('team-boxes');
+			$.each(TEAMS, function(index, data){
+				teamsDiv.innerHTML += getTeamBox(data);
+			});
+
+			window.onload = function(){
+				setTimeout(function(){
+					document.getElementById('loading-screen').classList.toggle('loading');
+				}, 0);
+			}
 
 			console.log("LOADED MAIN");
 
