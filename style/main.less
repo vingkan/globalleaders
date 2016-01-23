@@ -101,7 +101,7 @@ li{
 	background-size: 1.0 * @textSize;
 	background-position: left center;
 	background-repeat: no-repeat;
-	padding-left: 1.25 * @textSize;
+	padding-left: 1.5 * @textSize;
 
 	&:hover{
 		background-image: url('img/logo-ball-orange.png');
@@ -200,8 +200,24 @@ section#teams{
 section#involved{
 
 	.SectionPage(url('img/grey-wash.png'), white, @mainColor);
+	height: 26 * @vh;
 
 	button{
+		background: @GlobalOrange;
+		margin-top: 25 * @vh;
+		position: absolute;
+	}
+
+}
+
+section#signin{
+
+	button{
+		width: 40%;
+		margin: (1 * @vh) 30%;
+	}
+
+	button:nth-child(5){
 		background: @GlobalOrange;
 	}
 
@@ -228,6 +244,9 @@ section#involved{
 		@arrowBoxHeight: 1.5 * @textSize;
 		@arrowColor: @borderColor;
 
+		z-index: 40;
+		position: relative;
+
 		width: @arrowWidth;
 		margin: (-1 * @paddingSize) auto;
 		background: @arrowColor;
@@ -241,6 +260,8 @@ section#involved{
 		& + div.arrow-down{
 			.ArrowDown(@arrowColor, @arrowWidth, @arrowHeight);
 			margin: @paddingSize auto;
+			z-index: 40;
+			position: relative;
 		}
 
 	}
@@ -464,6 +485,55 @@ button.page-button{
 
 	&:hover{
 		opacity: 0.5;
+	}
+
+	.AnimateAll();
+
+}
+
+div.half-button{
+
+	width: 50%;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background: transparent;
+	float: left;
+	margin-top: -8.85 * @vh;
+	height: 30 * @vh;
+	position: relative;
+
+	h3{
+		position: absolute;
+		top: 45%;
+		width: 90%;
+	}
+
+	&:hover{
+		background: @GlobalOrange;
+	}
+
+	.AnimateAll();
+
+}
+
+input{
+
+	height: @formElementHeight;
+	line-height: @formElementHeight;
+	background: @Asbestos;
+	color: white;
+	margin: (1 * @vh) 25%;
+	width: 46%;
+	padding: 0 2%;
+	border-radius: 0.5 * @vh;
+
+	&::webkit-input-placeholder{
+		color: white;
+	}
+
+	&:focus{
+		background: @PeterRiver;
 	}
 
 	.AnimateAll();
