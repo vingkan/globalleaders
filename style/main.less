@@ -2,25 +2,28 @@
 /*---> COLORS <-------------------------------*/
 /*--------------------------------------------*/
 
-@mainColor: #F6931E;
-@mainLight: @mainColor + #222222;
-@mainDark: @mainColor - #222222;
+@Charcoal: #1a1a1a;
+@LightGray: rgb(150, 150, 150);
 
-@charcoal: #1a1a1a;
-
-@Emerald: #7f8c8d;
 @PeterRiver: #3498db;
+@Emerald: #2ecc71;
 @Amethyst: #9b59b6;
 @Silver: #bdc3c7;
 @Asbestos: #7f8c8d;
+
+@mainColor: @PeterRiver;
+@mainLight: @mainColor + #222222;
+@mainDark: @mainColor - #222222;
+
 
 /*--------------------------------------------*/
 /*---> FONTS <--------------------------------*/
 /*--------------------------------------------*/
 
-@vh: 1vh;
+@vh: 6.5px;
 @textSize: 3vh;
 
+@Titillium: 'Titillium Web', sans-serif;
 @OpenSans: 'Open Sans Condensed', sans-serif;
 @Allan: 'Allan', sans-serif;
 @Acme: 'Acme', sans-serif;
@@ -31,7 +34,8 @@
 }
 
 .BodyFont(){
-	font-family: @OpenSans;
+	font-family: @Titillium;
+	letter-spacing: 0.5px;
 }
 
 /*--------------------------------------------*/
@@ -93,7 +97,7 @@ html{
 	//Default Text Styles
 	.BodyFont();
 	font-size: @textSize;
-	color: @charcoal;
+	color: @Charcoal;
 }
 
 body{
@@ -128,10 +132,22 @@ body{
 @paddingSize: 2 * @vh;
 
 section.section-page{
-	.SectionPage(blue, @charcoal, @mainColor);
+	.SectionPage(white, @Charcoal, @mainColor);
 }
 
-.SectionPage(@backgroundColor: @charcoal, @textColor: white, @borderColor: @mainColor){
+section#landing{
+	background: white;
+}
+
+section#teams{
+	background: @Asbestos;
+}
+
+/*--------------------------------------------*/
+/*---> SECTIONS <-----------------------------*/
+/*--------------------------------------------*/
+
+.SectionPage(@backgroundColor: @Charcoal, @textColor: white, @borderColor: @mainColor){
 
 	@borderHeight: 2.5 * @vh;
 
@@ -166,12 +182,6 @@ section.section-page{
 
 }
 
-/*div.arrow-down{
-	.ArrowDown(@mainColor, 20vw);
-	margin: 0 auto;
-}*/
-
-
 /*--------------------------------------------*/
 /*---> HEADER & FOOTER <----------------------*/
 /*--------------------------------------------*/
@@ -183,27 +193,67 @@ header{
 	& + div.header-space{
 		width: 100%;
 		height: @headerHeight;
+		background: transparent;
 	}
 
 	position: fixed;
 	width: 100%;
 	height: @headerHeight;
+	padding: 0;
 	background: @mainColor;
 	color: white;
+	box-shadow: 0 0 (5 * @vh) rgba(0, 0, 0, 0.5);
+
+	img, nav{
+		position: fixed;
+		top: 0;
+	}
+
+	img{
+		left: 0;
+		height: 0.75 * @headerHeight;
+		margin: 0.125 * @headerHeight;
+		display: inline-block;
+	}
+
+		/*@media screen{	
+				padding: 0.25 * @vh 1 * @vh;
+			
+			@media (min-width: 545px){
+				padding: 1 * @vh 1 * @vh;
+			
+			}
+		}*/
+
 
 	nav{
 
-		background: red;
+		right: 0;
+		background: transparent;
 		width: auto;
+		padding: 0;
 		
 		a{
-			background: blue;
+
+			background: transparent;
 			border-left: 2px solid white;
 			padding: 0.5 * @paddingSize;
 			//TEXT STYLES
 			text-align: center;
 			font-size: 0.35 * @headerHeight;
 			line-height: @headerHeight;
+			height: @headerHeight;
+
+			&:nth-child(1){
+				border: none;
+			}
+
+			&:hover{
+				background: @Asbestos;
+			}
+
+			.AnimateAll();
+
 		}
 
 	}
