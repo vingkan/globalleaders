@@ -30,11 +30,12 @@
 @Iceberg: 'Iceberg', sans-serif;
 
 .HeadFont(){
-	font-family: @Iceberg;
+	font-family: @Titillium;
+	font-weight: bold;
 }
 
 .BodyFont(){
-	font-family: @Titillium;
+	font-family: @OpenSans;
 	letter-spacing: 0.5px;
 }
 
@@ -47,9 +48,19 @@ p, h1, h2, h3, ul, li{
 	margin: (0.5 * @textSize) auto;
 }
 
+p, h1, h2, h3{
+	width: 97.5%;
+}
+
 h1, h2, h3{
 	.HeadFont();
 	text-align: center;
+}
+
+.EmphasizeText(@emphasisColor: white){
+	text-transform: uppercase;
+	text-shadow: 0 0 (3 * @vh) rgba(0, 0, 0, 0.5);
+	color: @emphasisColor;
 }
 
 h1{
@@ -132,11 +143,16 @@ body{
 @paddingSize: 2 * @vh;
 
 section.section-page{
-	.SectionPage(white, @Charcoal, @mainColor);
+	.SectionPage(white, white, @mainColor);
 }
 
 section#landing{
-	background: white;
+	.SectionPage(white, @Charcoal, @mainColor);
+	h1{
+		color: @PeterRiver;
+		text-transform: uppercase;
+		//.EmphasizeText(@PeterRiver);
+	}
 }
 
 section#teams{
@@ -167,6 +183,7 @@ section#teams{
 		width: @arrowWidth;
 		margin: (-1 * @paddingSize) auto;
 		background: @arrowColor;
+		color: @textColor;
 		//TEXT STYLES
 		text-align: center;
 		font-size: 0.75 * @arrowBoxHeight;
@@ -309,6 +326,31 @@ header{
 input, button, select{
 	outline: none;
 	border: none;
+	.BodyFont();
+}
+
+@formElementHeight: 5 * @vh;
+
+button.page-button{
+
+	background: @PeterRiver;
+	color: white;
+	margin: (1 * @vh) 10%;
+	width: 80%;
+	height: @formElementHeight;
+	//TEXT STYLES
+	text-align: center;
+	font-size: 1.0 * @textSize;
+	line-height: @formElementHeight;
+	font-weight: bold;
+	cursor: pointer;
+
+	&:hover{
+		opacity: 0.5;
+	}
+
+	.AnimateAll();
+
 }
 
 /*--------------------------------------------*/
