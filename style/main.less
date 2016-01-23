@@ -61,6 +61,7 @@ h1, h2, h3{
 
 .EmphasizeText(@emphasisColor: white){
 	text-transform: uppercase;
+	webkit-text-transform: uppercase;
 	text-shadow: 0 0 (3 * @vh) rgba(0, 0, 0, 0.5);
 	color: @emphasisColor;
 }
@@ -182,6 +183,7 @@ section#landing{
 	h1{
 		color: @PeterRiver;
 		text-transform: uppercase;
+		webkit-text-transform: uppercase;
 		font-size: 2.5 * @textSize;
 		line-height: 2.75 * @textSize;
 		//.EmphasizeText(@PeterRiver);
@@ -635,6 +637,7 @@ input{
 	}
 
 	animation: shiftingColors 2s ease infinite;
+	-webkit-animation: shiftingColors 2s ease infinite;
 
 }
 
@@ -687,13 +690,16 @@ div#loading-screen{
 	@-webkit-keyframes spinBall{
 		from{
 			transform: rotate(0deg);
+			webkit-transform: rotate(0deg);
 		}
 		to{
 			transform: rotate(360deg);
+			webkit-transform: rotate(360deg);
 		}
 	}
 
 	animation: spinBall 1s linear infinite;
+	-webkit-animation: spinBall 1s linear infinite;
 
 }
 

@@ -139,11 +139,19 @@
 				teamsDiv.innerHTML += getTeamBox(data);
 			});
 
-			window.onload = function(){
-				setTimeout(function(){
-					document.getElementById('loading-screen').classList.toggle('loading');
-				}, 0);
+			function onReady(callback){
+				var intervalID = window.setInterval(checkReady, 1000);
+				function checkReady(){
+					if(document.getElementsByTagName('body')[0] !== undefined){
+						window.clearInterval(intervalID);
+						callback();
+					}
+				}
 			}
+
+			onReady(function(){
+				document.getElementById('loading-screen').classList.toggle('loading');
+			});
 
 			console.log("LOADED MAIN");
 
