@@ -216,27 +216,17 @@ header{
 		display: inline-block;
 	}
 
-		/*@media screen{	
-				padding: 0.25 * @vh 1 * @vh;
-			
-			@media (min-width: 545px){
-				padding: 1 * @vh 1 * @vh;
-			
-			}
-		}*/
-
-
 	nav{
 
 		right: 0;
-		background: transparent;
-		width: auto;
 		padding: 0;
+		width: auto;
+		background: transparent;
 		
 		a{
 
 			background: transparent;
-			border-left: 2px solid white;
+			border-left: (0.5 * @vh) solid white;
 			padding: 0.5 * @paddingSize;
 			//TEXT STYLES
 			text-align: center;
@@ -256,6 +246,58 @@ header{
 
 		}
 
+		.AnimateAll();
+
+	}
+
+	//RESPONSIVE STYLES
+
+	@media screen{
+		
+		@media (max-width: 545px){
+
+			height: 1.75 * @headerHeight;
+
+			img{
+				width: 30vw;
+				margin: (0.25 * @headerHeight) 35vw;
+				height: auto;
+			}
+
+			nav{
+
+				width: 10vw;
+				top: -14 * (@paddingSize + @headerHeight);
+				
+				&::after{
+					content: '-';
+					color: transparent;
+					background: @Charcoal;
+					padding: @paddingSize;
+					height: @headerHeight;
+				}
+
+				a{
+					
+					width: 100vw;
+					margin-left: -90vw;
+					float: left;
+					clear: left;
+					background: @Charcoal;
+
+					&:nth-child(1){
+						border-left: (0.5 * @vh) solid white;
+					}
+				
+				}
+
+				&:hover{
+					top: 0;
+				}
+
+			}
+
+		}
 	}
 
 }
