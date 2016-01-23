@@ -92,10 +92,24 @@ ul{
 }
 
 li{
+
 	font-size: 1.0 * @textSize;
-	line-height: 1.25 * @textSize;
-	list-style: disc;
+	line-height: 1.5 * @textSize;
 	margin: (0.15 * @textSize) auto;
+	list-style: none;
+	background-image: url('img/logo-ball-charcoal.png');
+	background-size: 1.0 * @textSize;
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 1.25 * @textSize;
+
+	&:hover{
+		background-image: url('img/logo-ball-orange.png');
+		color: @GlobalOrange;
+	}
+
+	.AnimateAll();
+
 }
 
 /*--------------------------------------------*/
@@ -155,12 +169,10 @@ body{
 @paddingSize: 2 * @vh;
 
 section.section-page{
-	.SectionPage(white, @Charcoal, @mainColor);
+	.SectionPage(url('img/new-year.png'), @Charcoal, @mainColor);
 }
 
 section#landing{
-
-	.SectionPage(url('img/new-year.png'), @Charcoal, @mainColor);
 
 	img{
 		height: 30vh;
@@ -183,6 +195,16 @@ section#landing{
 
 section#teams{
 	.SectionPage(url('img/grey-wash.png'), white, @mainColor);
+}
+
+section#involved{
+
+	.SectionPage(url('img/grey-wash.png'), white, @mainColor);
+
+	button{
+		background: @GlobalOrange;
+	}
+
 }
 
 /*--------------------------------------------*/
