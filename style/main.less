@@ -200,12 +200,22 @@ section#teams{
 section#involved{
 
 	.SectionPage(url('img/grey-wash.png'), white, @mainColor);
-	height: 26 * @vh;
+	height: 31 * @vh;
 
 	button{
-		background: @GlobalOrange;
-		margin-top: 25 * @vh;
+		background: @PeterRiver;
+		margin-top: 16.5 * @vh;
 		position: absolute;
+	}
+
+	div.half-button{
+		
+		padding-bottom: 5 * @vh;
+
+		h3{
+			top: 37.5%;
+		}
+
 	}
 
 }
@@ -377,7 +387,7 @@ header{
 		a{
 
 			background: transparent;
-			border-left: (0.5 * @vh) solid white;
+			border-left: (0.25 * @vh) solid white;
 			padding: 0.5 * @paddingSize;
 			//TEXT STYLES
 			text-align: center;
@@ -493,11 +503,11 @@ button.page-button{
 
 div.half-button{
 
+	.FillBackgroundImage();
 	width: 50%;
 	padding: 0;
 	margin: 0;
 	display: inline-block;
-	background: transparent;
 	float: left;
 	margin-top: -8.85 * @vh;
 	height: 30 * @vh;
@@ -507,10 +517,15 @@ div.half-button{
 		position: absolute;
 		top: 45%;
 		width: 90%;
+		margin: 0 5%;
+		cursor: pointer;
+		.AnimateAll();
 	}
 
-	&:hover{
+	&:hover h3{
 		background: @GlobalOrange;
+		padding: 2%;
+		margin: -2% 3%;
 	}
 
 	.AnimateAll();
