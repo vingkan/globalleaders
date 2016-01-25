@@ -36,7 +36,8 @@
 
 		<div class="header-space" id="top"></div>
 
-		<div id="loading-screen" class="loading">
+		<div id="loading-screen">
+		<!-- <div id="loading-screen" class="loading"> -->
 			<!-- <div id="loading-logo"></div>
 			<img src="style/img/hollow-logo-square.png"> -->
 			<img class="spinning-ball" src="style/img/logo-ball-orange.png">
@@ -88,6 +89,13 @@
 			<div class="arrow-down"></div>
 			<h1>Coming Soon...</h1>
 			<img class="spinning-ball" src="style/img/logo-ball-orange.png">
+			<ul class="timeline">
+				<li>
+					<h2>Jan<span>uary</span></h2>
+					<p>Implementation and Planning</p>
+					<button>View Module</button>
+				</li>
+			</ul>
 		</section>
 
 		<section class="section-page" id="signin">
@@ -151,7 +159,7 @@
 			}
 
 			onReady(function(){
-				document.getElementById('loading-screen').classList.toggle('loading');
+				//document.getElementById('loading-screen').classList.toggle('loading');
 			});
 
 			console.log("LOADED MAIN");
