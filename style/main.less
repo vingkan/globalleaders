@@ -146,6 +146,14 @@ body{
 	border-top: @triHeight solid @triColor;
 }
 
+.ArrowRight(@triColor: @mainColor, @triWidth: 10 * @vh , @triHeight: 2.5 * @vh){
+	width: 0;
+	height: 0;
+	border-top: (@triHeight / 2) solid transparent;
+	border-bottom: (@triHeight / 2) solid transparent;
+	border-left: @triWidth solid @triColor;
+}
+
 
 /*--------------------------------------------*/
 /*---> STRUCTURE <----------------------------*/
@@ -525,36 +533,38 @@ ul.timeline{
 	@liHeight: 2.0 * @textSize;
 
 	border-left: (0.5 * @vh) solid white;
-	width: 78vw;
-	margin-left: 20vw;
+	width: auto;
+	margin-left: 24vw;
+	padding-top: 0.5 * @vh;
 
 	li{
 
-		
+		width: auto;
 		list-style: none;
-		//margin-left: 0.85 * @textSize;
-		background: blue;
+		margin: (5 * @vh) auto;
 		
 		height: @liHeight;
 		line-height: @liHeight;
 
-		h2, p, button{
+		h2, p{
 			height: @liHeight;
 			line-height: @liHeight;
 		}
 
 		&:before{
-			content: '*';
+			@bulletSize: 0.5 * @liHeight;
+			content: '';
+			background-image: url('img/white-disc.png');
+			width: @bulletSize;
+			height: @bulletSize;
+			background-size: @bulletSize;
 			position: absolute;
-			font-size: 200%;
-			margin-left: -1.25 * @vh;
-			margin-top: 0.25 * @liHeight;
+			margin-left: -1.0 * ((0.5 * @bulletSize) + (0.25 * @vh));
+			margin-top: (0.25 * @liHeight);
 		}
 
 		h2{
 			color: @GlobalOrange;
-			//position: absolute;
-			//left: 0;
 			float: left;
 			text-align: right;
 			width: 17vw;
@@ -564,19 +574,15 @@ ul.timeline{
 		}
 
 		p{
-			width: 70vw;
+
+			width: auto;
 			margin-left: 3vw;
 			margin-right: 0;
-			background: red;
 			text-align: left;
 
-		}
-
-		button{
-			width: 12vw;
-			display: inline-block;
-			float: right;
-			margin-top: -1.25 * @liHeight;
+			i{
+				color: @GlobalOrange;
+			}
 
 		}
 
