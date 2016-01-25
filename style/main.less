@@ -97,19 +97,27 @@ li{
 	font-size: 1.0 * @textSize;
 	line-height: 1.5 * @textSize;
 	margin: (0.15 * @textSize) auto;
-	list-style: none;
-	background-image: url('img/logo-ball-charcoal.png');
-	background-size: 1.0 * @textSize;
-	background-position: left center;
-	background-repeat: no-repeat;
-	padding-left: 1.5 * @textSize;
+}
 
-	&:hover{
-		background-image: url('img/logo-ball-orange.png');
-		color: @GlobalOrange;
+ul.glp-bullets{
+
+	li{
+
+		list-style: none;
+		background-image: url('img/logo-ball-charcoal.png');
+		background-size: 1.0 * @textSize;
+		background-position: left center;
+		background-repeat: no-repeat;
+		padding-left: 1.5 * @textSize;
+
+		&:hover{
+			background-image: url('img/logo-ball-orange.png');
+			color: @GlobalOrange;
+		}
+
+		.AnimateAll();
+
 	}
-
-	.AnimateAll();
 
 }
 
@@ -515,7 +523,27 @@ footer{
 
 ul.timeline{
 
+	li{
 
+		list-style: none;
+		background: blue;
+		padding: 0;
+
+		h2{
+			color: @GlobalOrange;
+		}
+
+		p{
+			width: 100%;
+			background: red;
+			text-align: left;
+		}
+
+		button{
+
+		}
+
+	}
 
 }
 
