@@ -93,32 +93,8 @@ ul{
 }
 
 li{
-
 	font-size: 1.0 * @textSize;
 	line-height: 1.5 * @textSize;
-	margin: (0.15 * @textSize) auto;
-}
-
-ul.glp-bullets{
-
-	li{
-
-		list-style: none;
-		background-image: url('img/logo-ball-charcoal.png');
-		background-size: 1.0 * @textSize;
-		background-position: left center;
-		background-repeat: no-repeat;
-		padding-left: 1.5 * @textSize;
-
-		&:hover{
-			background-image: url('img/logo-ball-orange.png');
-			color: @GlobalOrange;
-		}
-
-		.AnimateAll();
-
-	}
-
 }
 
 /*--------------------------------------------*/
@@ -263,7 +239,7 @@ section#signin{
 
 	h2.arrow-title{
 
-		@arrowWidth: 40vw;
+		@arrowWidth: 50vw;
 		@arrowHeight: @borderHeight;
 		@arrowBoxHeight: 1.5 * @textSize;
 		@arrowColor: @borderColor;
@@ -518,28 +494,89 @@ footer{
 }
 
 /*--------------------------------------------*/
-/*---> TIMELINE <-----------------------------*/
+/*---> LISTS <--------------------------------*/
 /*--------------------------------------------*/
 
-ul.timeline{
+ul.glp-bullets{
 
 	li{
 
+		margin: (0.15 * @textSize) auto;
 		list-style: none;
-		background: blue;
-		padding: 0;
+		background-image: url('img/logo-ball-charcoal.png');
+		background-size: 1.0 * @textSize;
+		background-position: left center;
+		background-repeat: no-repeat;
+		padding-left: 1.5 * @textSize;
 
-		h2{
+		&:hover{
+			background-image: url('img/logo-ball-orange.png');
 			color: @GlobalOrange;
 		}
 
+		.AnimateAll();
+
+	}
+
+}
+
+ul.timeline{
+
+	@liHeight: 2.0 * @textSize;
+
+	border-left: (0.5 * @vh) solid white;
+	width: 78vw;
+	margin-left: 20vw;
+
+	li{
+
+		
+		list-style: none;
+		//margin-left: 0.85 * @textSize;
+		background: blue;
+		
+		height: @liHeight;
+		line-height: @liHeight;
+
+		h2, p, button{
+			height: @liHeight;
+			line-height: @liHeight;
+		}
+
+		&:before{
+			content: '*';
+			position: absolute;
+			font-size: 200%;
+			margin-left: -1.25 * @vh;
+			margin-top: 0.25 * @liHeight;
+		}
+
+		h2{
+			color: @GlobalOrange;
+			//position: absolute;
+			//left: 0;
+			float: left;
+			text-align: right;
+			width: 17vw;
+			margin-left: -20vw;
+			margin-top: 0;
+			vertical-align: top;
+		}
+
 		p{
-			width: 100%;
+			width: 70vw;
+			margin-left: 3vw;
+			margin-right: 0;
 			background: red;
 			text-align: left;
+
 		}
 
 		button{
+			width: 12vw;
+			display: inline-block;
+			float: right;
+			margin-top: -1.25 * @liHeight;
 
 		}
 
